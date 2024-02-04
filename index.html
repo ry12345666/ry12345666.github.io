@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>my blog</title>
+  <link rel="icon" href="web.ico">
+  <style>
+    body{background-image:url(image.jpg);background-repeat: no-repeat; background-size:100%}
+   
+   
+    /* 样式表 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #3f3e3e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    article {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    h2 {
+      color: #ffffff;
+    }
+
+    p {
+      color: #f7f5f5;
+    }
+
+   
+  </style>
+</head>
+<body>
+  <header>
+    <div style="color:white;">  <h1>my blog</h1></div>
+  
+  </header>
+
+  <main>
+    <article>
+      <h2>my first blog</h2>
+      <div style="color:white;"> <p>我的第一篇博客，提前祝大家新年快乐！</p></div>
+        <div style="color:white;"> <p>发布日期：2024-02-02<p></div>
+    </article>
+     
+    <!--音乐播放器-->
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+
+<script src="https://myhkw.cn/player/js/player.js" id="myhk" key="demo" m="1"></script>
+
+    <!-- 添加更多文章 -->
+       
+  </main>
+  <footer>  
+    <style>
+      #clock {
+        font-family: "Arial", sans-serif;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .flip {
+        animation: flip 1s linear forwards;
+      }
+      #year,
+      #month,
+      #day,
+      #time {
+        display: inline-block;
+        margin: 10px 20px;
+        color: white; /* 更改字体颜色为白色 */
+      }
+      @keyframes flip {
+        0% {
+          transform: rotateX(0) translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: rotateX(90deg) translateY(30px);
+          opacity: 0;
+        }
+        51% {
+          transform: rotateX(-90deg) translateY(-30px);
+          opacity: 0;
+        }
+        100% {
+          transform: rotateX(0) translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <span id="year" class="flip"></span>
+      <span id="month" class="flip"></span>
+      <span id="day" class="flip"></span>
+      <span id="time" class="flip"></span>
+    </div>
+  
+    <script>
+      function updateClock() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var time = now.toLocaleTimeString([], { hour12: false });
+        document.getElementById('year').innerHTML = year + '年';
+        document.getElementById('month').innerHTML = month + '月';
+        document.getElementById('day').innerHTML = day + '日';
+        document.getElementById('time').innerHTML = time;
+      }
+  
+      function initClock() {
+        updateClock();
+        setInterval(updateClock, 1000);
+      }
+  
+      window.addEventListener('DOMContentLoaded', initClock);
+     
+    </script>
+    
+  </footer>
+</body>
+</html>
